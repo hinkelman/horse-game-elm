@@ -1,5 +1,7 @@
 # Horse Game (Elm)
 
+**Live site: <https://hinkelman.github.io/horse-game-elm/>**
+
 An Elm 0.19.2 port of the [Shiny app](https://github.com/hinkelman/horse-game) for tracking the
 [Across the Board Kentucky Derby horse racing game](https://www.travishinkelman.com/horse-game/):
 enter the base value and the four scratches, tap each dice roll, and see the kitty and each horse's
