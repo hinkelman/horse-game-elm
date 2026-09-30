@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f3ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)">
+  <title>Horse Game</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐎</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <script src="elm.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    var KEY = "horse-game-state";
+    var saved = null;
+    try { saved = JSON.parse(localStorage.getItem(KEY)); } catch (e) {}
+    var app = Elm.Main.init({ node: document.getElementById("app"), flags: saved });
+    app.ports.saveState.subscribe(function (state) {
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    });
+  </script>
+</body>
+</html>
