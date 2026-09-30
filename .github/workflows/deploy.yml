@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Elm 0.19.2
         run: |
-          curl -L -o elm.gz https://github.com/elm/compiler/releases/download/0.19.2/binary-for-linux-64-bit.gz
+          curl -fsSL -o elm.gz https://github.com/elm/compiler/releases/download/0.19.2/elm-0.19.2-linux-x64.gz
           gunzip elm.gz && chmod +x elm && sudo mv elm /usr/local/bin/
       - uses: actions/setup-node@v4
         with:
